@@ -19,7 +19,7 @@ const AddContact = () => {
             <br />
             <form>
                 <label className="form-label">Full Name</label>
-                <input placeholder="Full Name" name="nombre" className="form-control" onChange={(e) => {console.log(data) , setData({ ...data, full_name: e.target.value }) }} />
+                <input placeholder="Full Name" name="nombre" className="form-control" onChange={(e) => {setData({ ...data, full_name: e.target.value }) }} />
                 <label className="form-label">Email</label>
                 <input placeholder="Enter email" name="correo" className="form-control" onChange={(e) => { setData({ ...data, email: e.target.value }) }} />
                 <label className="form-label">Phone</label>
