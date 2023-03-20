@@ -50,7 +50,7 @@ const Contactos = () => {
                                         </div>
                                         <div className="col-1">
                                             <div>
-                                                <Link to="/edit-contact">
+                                                <Link to={`/edit-contact/${index}`}>
                                                     <button className="btn" button="button">
                                                         <FontAwesomeIcon icon={faPencil} />
                                                     </button>
