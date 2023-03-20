@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
-const AddContact = () => {
+const EditContact = () => {
     const { store, actions } = useContext(Context)
     const [data, setData] = useState({})
     useEffect(() => {
@@ -11,7 +11,7 @@ const AddContact = () => {
     return (<div>
         <br />
         <h1 className="text-center">
-            Add new contact
+            Edit contact
         </h1>
         <br />
         <div className="container">
@@ -19,16 +19,16 @@ const AddContact = () => {
             <br />
             <form>
                 <label className="form-label">Full Name</label>
-                <input placeholder="Full Name" name="nombre" className="form-control" onChange={(e) => {console.log(data) , setData({ ...data, full_name: e.target.value }) }} />
+                <input placeholder="Full Name" name="nombre" className="form-control" onChange={(e) => { setData({ ...data, full_name: e.target.value }) }} />
                 <label className="form-label">Email</label>
                 <input placeholder="Enter email" name="correo" className="form-control" onChange={(e) => { setData({ ...data, email: e.target.value }) }} />
                 <label className="form-label">Phone</label>
                 <input placeholder="Enter phone" name="tlf" className="form-control" onChange={(e) => { setData({ ...data, phone: e.target.value }) }} />
                 <label className="form-label">Address</label>
-                <input placeholder="Enter address" name="dirección" className="form-control" onChange={(e) => { setData({ ...data, address: e.target.value }) }} />
+                <input placeholder="Enter address" name="dirección" className="form-control" onChange={(e) => {console.log(data), setData({ ...data, address: e.target.value }) }} />
                 <br />
                 <button type="button" className="btn btn-primary col-12" onClick={() => {
-                    actions.addContact(data)
+                    actions.editContact(index, data)
                 }}>
                     Save
                 </button>
@@ -38,4 +38,4 @@ const AddContact = () => {
         </div>
     </div>)
 }
-export default AddContact;
+export default EditContact;
